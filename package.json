@@ -1,0 +1,21 @@
+{
+  "name": "app",
+  "private": "true",
+  "dependencies": {
+    "@hotwired/stimulus": "^3.2.1",
+    "@hotwired/turbo-rails": "^7.2.4",
+    "@popperjs/core": "^2.11.6",
+    "bootstrap": "^5.2.3",
+    "jquery": "^3.6.3",
+    "matter-attractors": "^0.1.6",
+    "matter-js": "^0.18.0",
+    "matter-wrap": "^0.2.0",
+    "slick-carousel": "^1.8.1",
+    "typed.js": "^2.0.12",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1"
+  },
+  "scripts": {
+    "build": "webpack --config webpack.config.js"
+  }
+}

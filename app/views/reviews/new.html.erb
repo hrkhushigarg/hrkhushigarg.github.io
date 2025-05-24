@@ -1,0 +1,10 @@
+<h2 style="color: #0E787A;">Give me your feedback</h2>
+
+<%= simple_form_for [@work, @review] do |f| %>
+<div class="form-inputs" style="color: #0E787A;">
+  <%= f.input :name, style: "color: #0E787A;", label: 'Your Name', placeholder: 'Type your name'%>
+  <%= f.input :position, style: "color: #0E787A;", label: 'Occupation:', placeholder: 'Your current position'%>
+  <%= f.input :content, style: "color: #0E787A;", label: 'Your Feedback', placeholder: 'Please describe our collaboration'%>
+  <%= f.submit "Submit review", class: "btn btn-blue" %>
+<% end %>
+</div>

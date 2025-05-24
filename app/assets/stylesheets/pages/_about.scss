@@ -1,0 +1,162 @@
+#top{
+  .home--mobility-goals{
+      display: flex;
+      flex-direction: column;
+      overflow: visible;
+      border: none;
+      @media only screen and (min-width: 990px) {
+          flex-direction: row;
+          justify-content: space-between;
+      }
+      .tab_titles{
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          @media only screen and (max-width: 989px) {
+              margin-bottom: 50px;
+              width: 100%;
+              min-width: initial;
+              max-width: initial;
+          }
+          @media only screen and (min-width: 990px) {
+              width: 40%;
+              min-width: 40%;
+          }
+          .tab{
+              background-color: blue;
+              border-radius: 67px;
+              font-size: 20px;
+              // font-family: $heading-font-family;
+              color: white !important;
+              padding: 8px 45px 8px 55px;
+              position: relative;
+              box-shadow: -10px -10px 20px rgba($black, 0.16);
+              transition: background-color ease 0.2s;
+              letter-spacing: calc( ( 17px / 1000 ) * 15 );
+              @media only screen and (min-width: 990px) {
+                  font-size: 24px;
+                  letter-spacing: calc( ( 24px / 1000 ) * 15 );
+                  padding: 16px 35px 18px 85px;
+              }
+              .tab_icon{
+                  height: 33px;
+                  width: 33px;
+                  position: absolute;
+                  top: 50%;
+                  left: 13px;
+                  border-radius: 100%;
+                  background-color: $white;
+                  transform: translateY(-50%);
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  color: blue;
+                  @media only screen and (min-width: 990px) {
+                      height: 51px;
+                      width: 51px;
+                  }
+                  &:before{
+                      opacity: 0;
+                      position: absolute;
+                  }
+                  &:after{
+                      content: '\e811';
+                      font-family: 'petrol-prices';
+                      color: $siniosvetlo;
+                      opacity: 1;
+                  }
+
+              }
+              &.active_tab, &:hover{
+                  background-color: $julto;
+              }
+              &.active_tab{
+                  background-color: $julto;
+                  // font-weight: $regular;
+                  .tab_icon{
+                      &:before{
+                          position: absolute;
+                          opacity: 1;
+                      }
+                      &:after{
+                          position: initial;
+                          opacity: 0;
+                      }
+                  }
+              }
+              &:not(:last-child){
+                  margin-bottom: 10px;
+              }
+              &:focus{
+                  outline: none;
+              }
+          }
+      }
+      .av_tab_section{
+          .fullsize-tab{
+              display: none;
+          }
+          .tab_content{
+              background-color: $white;
+              border: none;
+              box-shadow: -10px -10px 20px rgba($black, 0.16);
+              border-radius: 18px;
+              padding: 38px 50px 44px 28px;
+              position: relative;
+              @media only screen and (min-width: 990px) {
+                  padding: 55px 60px 55px 70px;
+                  margin-left: 40px;
+                  width: calc( 60vw - 100px );
+              }
+              @media only screen and (min-width: 1310px) {
+                  width: 688px;
+              }
+              .tab_inner_content{
+                  font-size: 18px;
+                  line-height: 1.56;
+                  ul + p{
+                      padding-top: 15px;
+                  }
+                  ul:not(.video-links) li::before{
+                      top: 6px !important;
+                  }
+                  .two-col-ul{
+                      li{
+                          display: inline-block;
+                          width: 100%;
+                      }
+                  }
+                  .video-links{
+                      max-width: 300px;
+                      li{
+                          padding: 0 0 0 1.4em !important;
+                          margin: 0.18em 0 !important;
+                          &:before{
+                              content: '\f144' !important;
+                              font-family: 'airinc-homepage-2020' !important;
+                              color: $siniosvetlo !important;
+                              font-size: 1em !important;
+                          }
+                          a{
+                              text-decoration: none;
+                              color: $gray;
+                          }
+                      }
+                  }
+              }
+              &:after{
+                  content: '';
+                  height: 100%;
+                  width: 20px;
+                  background-color: $julto;
+                  position: absolute;
+                  right: 0;
+                  top: 0;
+              }
+              &:not(.active_tab_content){
+                  display: none;
+              }
+          }
+      }
+  }
+}

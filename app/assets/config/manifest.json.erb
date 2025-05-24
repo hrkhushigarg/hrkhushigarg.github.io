@@ -1,0 +1,18 @@
+
+{
+  "background_color": "white",
+  "description": "Want to change your job? Worried about the job interview? Having an HR question but have no one to ask? If the answer is YES,  you are at the right place.",
+  "display": "fullscreen",
+  "name": "Evgenia Manolova",
+  "icons": [
+    <% files = Dir.entries(Rails.root.join("app/assets/images/icons/")).select {|f| !File.directory? f} %>
+    <% files.each_with_index do |file, index| %>
+      <% match = file.match(/.+-(?<size>\d{2,3}x\d{2,3}).png/) %>
+      {
+        "src": "<%= image_path "icons/#{file}" %>",
+        "sizes": "<%= match && match[:size] %>",
+        "type": "image/png"
+      }<%= "," unless (files.size - 1) == index %>
+    <% end %>
+  ]
+}

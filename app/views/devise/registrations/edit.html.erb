@@ -1,0 +1,38 @@
+<h2 style="color: #0E787A;">Edit <%= resource_name.to_s.humanize %></h2>
+
+<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs" style="color: #0E787A;">
+    <%= f.input :email, required: true, autofocus: true %>
+
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+    <% end %>
+
+    <%= f.input :password,
+                hint: "leave it blank if you don't want to change it",
+                required: false,
+                input_html: { autocomplete: "new-password", style: "color: #0E787A;" } %>
+    <%= f.input :password_confirmation,
+                required: false,
+                input_html: { autocomplete: "new-password", style: "color: #0E787A;" } %>
+    <%= f.input :current_password,
+                hint: "we need your current password to confirm your changes", style: "color: #0E787A;",
+                required: true,
+                input_html: { autocomplete: "current-password", style: "color: #0E787A;" } %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Update", style: "color: #0E787A;" %>
+  </div>
+<% end %>
+
+<h3 style="color: #0E787A;">Cancel my account</h3>
+
+<div class="d-flex align-items-center">
+  <div style="color: #0E787A;">Unhappy?</div>
+  <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-link" %>
+</div>
+
+<%= link_to "Back", :back, style: "color: #0E787A;" %>
